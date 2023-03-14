@@ -9,9 +9,7 @@
 student = Student.create(
     first_name: 'Jane',
     last_name: 'Doe',
-    email: 'jane@imc.com',
-    address: '1 Doe street',
-    dob: '2000,11,12'
+    email: 'jane@imc.com'
    )
 
    20.times do |i|
@@ -19,8 +17,13 @@ student = Student.create(
     Student.create(
         first_name: "Student #{i+1}",
         last_name: "Lname #{i+1}",
-        email: "student#{i+1}@imc.com",
-        address: "Doe street #{i+1}",
-        dob: '2000,11,12'
+        email: "student#{i+1}@imc.com"
     )
    end
+Student.all.each do |student|
+    student.blogs.create(title: "Dummy Blog for Student #{
+        student.id}", content: "Custom content pending")
+        student.blogs.create(title: "Dummy Blog for Student #{
+            student.id}", content: "Custom content pending")
+        
+    end
