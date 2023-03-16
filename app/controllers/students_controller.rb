@@ -10,12 +10,19 @@ class StudentsController < ApplicationController
     end
     def create
         @student = Student.new(student_params)
-        if @student.save
-            redirect_to students_path, notice: 'Student has been created successfully'
-        else
-            render :new
+
+        respond_to do |format|
+          if @student.save
+            format.html { redirect_to course_url(@student), notice: "Student was successfully created." }
+            format.json { render :show, status: :created, location: @student }
+          else
+            format.html { render :new, status: :unprocessable_entity }
+            format.json { render json: @student.errors, status: :unprocessable_entity }
+          end
         end
     end
+
+  
     def show
     end
     def edit
