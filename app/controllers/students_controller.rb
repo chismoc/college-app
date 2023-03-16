@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
 
         respond_to do |format|
           if @student.save
-            format.html { redirect_to course_url(@student), notice: "Student was successfully created." }
+            format.html { redirect_to student_url(@student), notice: "Student was successfully created." }
             format.json { render :show, status: :created, location: @student }
           else
             format.html { render :new, status: :unprocessable_entity }
@@ -29,10 +29,14 @@ class StudentsController < ApplicationController
     end
 
     def update
-        if @student.update(student_params)
-            redirect_to student_path(@student), notice: 'Student has been updated successfully'
-        else
-            render :edit
+        respond_to do |format|
+            if @student.update(student_params)
+                format.html { redirect_to student_url(@student), notice: "Student details was successfully updated." }
+                format.json { render :show, status: :ok, location: @student }
+            else
+                format.html { render :edit, status: :unprocessable_entity }
+                format.json { render json: @student.errors, status: :unprocessable_entity }
+            end
         end
     end
 
