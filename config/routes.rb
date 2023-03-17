@@ -7,4 +7,8 @@ Rails.application.routes.draw do
    root "welcome#index"
 
    resources :students
+
+   namespace :admin do
+    resources :students
+   end
 end
