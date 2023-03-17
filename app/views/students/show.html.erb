@@ -2,7 +2,11 @@
 <h1>Student Details</h1>
 <p><strong>Name:</strong><%= @student.full_name %></p>
 <p><strong>Email:</strong><%= @student.email %></p>
-<p><strong>Date Of Birth:</strong><%= @student.date_of_birth %></p>
+
+<% if @student.date_of_birth.present? %>%
+<p><strong>Date Of Birth:</strong><%=  formatted_date(@student.date_of_birth)%></p>
+<% end %>
+
 <p><strong>Age:</strong><%= @student.age %></p>
 <p><strong>Local Address:</strong><%= @student.local_address %></p>
 <p><strong>Permanent Address:</strong><%= @student.permanent_address %></p>
