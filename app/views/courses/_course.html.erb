@@ -1,14 +1,23 @@
 <div id="<%= dom_id course %>">
-  <p>
-    <strong>Name:</strong>
-    <%= course.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= course.description %>
-  </p>
-
   
 
+  <div class="card mb-2">
+  <div class="card-header">
+      <div row>
+          <div class="col col-3">
+            <h5 ><strong>Course Code: </strong><i> <%= course.course_code %></i></h5>
+          </div>
+          <div class="col col-8">
+            <h5><strong>  Course Name: </strong><i><%= course.name %></i></h5>
+          </div>
+      </div>
+      </div>
+        <div class="card-body">
+        
+          <p class="card-text"><%= course.description %></p>
+          
+        </div>
+  </div>
+
 </div>
+

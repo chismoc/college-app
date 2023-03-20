@@ -1,0 +1,25 @@
+.navbar{
+    background-color: black !important;
+}
+.nav-link{
+    color:white !important;
+}
+#logo{
+    float: left;
+    font-size: 1.5em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* sticky footer*/
+html,body{
+    height: 100%;
+}
+#page-content{
+    flex: 1 0 auto;
+}
+#sticky-footer{
+    flex-shrink: none;
+}

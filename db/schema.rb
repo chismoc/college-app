@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_204844) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_20_164724) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_204844) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "course_code"
   end
 
   create_table "courses_students", id: false, force: :cascade do |t|
